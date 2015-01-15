@@ -70,7 +70,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if cell == nil {
             cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: simpleTableIdentifier)
         }
-        cell?.textLabel?.text = tableData[indexPath.row]
+        cell?.textLabel?.text = tableData[tableData.count - indexPath.row - 1]
         cell?.textLabel?.numberOfLines = 0
         cell?.textLabel?.sizeToFit()
         return cell!
@@ -82,7 +82,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
-            tableData.removeAtIndex(indexPath.row)
+            tableData.removeAtIndex(tableData.count - indexPath.row - 1)
             refreshTable()
         }
     }
