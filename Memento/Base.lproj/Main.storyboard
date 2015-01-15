@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJ1-ha-f6k">
-                                <rect key="frame" x="16" y="202" width="289" height="36"/>
+                                <rect key="frame" x="170" y="202" width="135" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Add">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -27,19 +27,36 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BtF-Yz-qsv">
-                                <rect key="frame" x="15" y="35" width="289" height="150"/>
+                                <rect key="frame" x="15" y="35" width="290" height="150"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="giN-6d-xLf"/>
                                 </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="J4s-tZ-hbA">
-                                <rect key="frame" x="15" y="253" width="289" height="212"/>
+                                <rect key="frame" x="15" y="253" width="290" height="212"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPJ-Is-EPe" userLabel="Revert">
+                                <rect key="frame" x="15" y="198" width="135" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="1uP-yU-dIs"/>
+                                </constraints>
+                                <state key="normal" image="revert">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1uP-yU-dIs"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="revertButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XmC-r8-16i"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -47,13 +64,26 @@
                             <constraint firstItem="BtF-Yz-qsv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="1ad-VT-ZWv"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="J4s-tZ-hbA" secondAttribute="bottom" constant="15" id="67i-dN-lUw"/>
                             <constraint firstItem="J4s-tZ-hbA" firstAttribute="width" secondItem="wJ1-ha-f6k" secondAttribute="width" id="89x-R8-ZkM"/>
+                            <constraint firstItem="hPJ-Is-EPe" firstAttribute="top" secondItem="BtF-Yz-qsv" secondAttribute="bottom" constant="13" id="8sz-mO-dhJ"/>
+                            <constraint firstItem="J4s-tZ-hbA" firstAttribute="top" secondItem="hPJ-Is-EPe" secondAttribute="bottom" constant="21" id="DCL-c0-TiI"/>
                             <constraint firstItem="J4s-tZ-hbA" firstAttribute="top" secondItem="wJ1-ha-f6k" secondAttribute="bottom" constant="15" id="GOx-cN-abY"/>
+                            <constraint firstItem="hPJ-Is-EPe" firstAttribute="baseline" secondItem="wJ1-ha-f6k" secondAttribute="baseline" id="MYV-3q-jsI"/>
+                            <constraint firstItem="wJ1-ha-f6k" firstAttribute="leading" secondItem="hPJ-Is-EPe" secondAttribute="trailing" constant="20" id="Pvf-ga-uPy"/>
                             <constraint firstItem="wJ1-ha-f6k" firstAttribute="width" secondItem="BtF-Yz-qsv" secondAttribute="width" id="ReO-sF-1VA"/>
                             <constraint firstItem="J4s-tZ-hbA" firstAttribute="leading" secondItem="BtF-Yz-qsv" secondAttribute="leading" id="YTE-mg-KKc"/>
-                            <constraint firstAttribute="trailing" secondItem="BtF-Yz-qsv" secondAttribute="trailing" constant="16" id="Zhd-4N-wcl"/>
-                            <constraint firstAttribute="centerX" secondItem="wJ1-ha-f6k" secondAttribute="centerX" id="hKa-ce-G7P"/>
+                            <constraint firstAttribute="trailing" secondItem="BtF-Yz-qsv" secondAttribute="trailing" constant="15" id="Zhd-4N-wcl"/>
                             <constraint firstItem="BtF-Yz-qsv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="iZt-j5-j8A"/>
+                            <constraint firstAttribute="trailing" secondItem="wJ1-ha-f6k" secondAttribute="trailing" constant="15" id="nRO-de-WfR"/>
+                            <constraint firstItem="hPJ-Is-EPe" firstAttribute="width" secondItem="wJ1-ha-f6k" secondAttribute="width" id="oRn-Zi-eYZ"/>
+                            <constraint firstItem="hPJ-Is-EPe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="15" id="uqW-oS-1gx"/>
+                            <constraint firstItem="J4s-tZ-hbA" firstAttribute="width" secondItem="BtF-Yz-qsv" secondAttribute="width" id="vFo-cN-chi"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ReO-sF-1VA"/>
+                                <exclude reference="89x-R8-ZkM"/>
+                            </mask>
+                        </variation>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="480"/>
@@ -67,4 +97,7 @@
             <point key="canvasLocation" x="267" y="407"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="revert" width="21" height="23"/>
+    </resources>
 </document>

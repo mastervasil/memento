@@ -25,25 +25,40 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    let dateFormatter: NSDateFormatter = {
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd hh:mm"
+        return formatter
+    }()
+    
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm"
-        let date = dateFormatter.stringFromDate(NSDate())
-        textView.text = "\(date) - "
+        textView.layer.borderWidth = 1
+        textView.layer.borderColor = UIColor.blackColor().CGColor
+        resetText()
         
         tableView.delegate = self
         tableView.dataSource = self
         tableView.allowsMultipleSelectionDuringEditing = false;
     }
     
+    func resetText() {
+        let date = dateFormatter.stringFromDate(NSDate())
+        textView.text = "\(date) - "
+
+    }
+    
     @IBAction func addButtonDidPress(sender: AnyObject) {
         tableData.append(textView.text)
         refreshTable()
         textView.resignFirstResponder()
+    }
+    
+    @IBAction func revertButtonDidPress(sender: AnyObject) {
+        resetText()
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,6 +71,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: simpleTableIdentifier)
         }
         cell?.textLabel?.text = tableData[indexPath.row]
+        cell?.textLabel?.numberOfLines = 0
+        cell?.textLabel?.sizeToFit()
         return cell!
     }
     
