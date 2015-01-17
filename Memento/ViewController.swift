@@ -27,7 +27,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     let dateFormatter: NSDateFormatter = {
         let formatter = NSDateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd hh:mm"
+        formatter.dateFormat = "yyyy-MM-dd HH:mm"
         return formatter
     }()
     
